@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useRouteMatch, useHistory } from "react-router-dom";
 import { deleteCard } from "../../utils/api";
+import { Pencil, Trash } from "react-bootstrap-icons";
 
 export default function Card({ card, id }) {
   const { url } = useRouteMatch(); 
@@ -23,15 +24,11 @@ export default function Card({ card, id }) {
             </div>
             <div className="col">
               <p className="card-text">{card.back}</p>
-              <Link to={`${url}/cards/${id}/edit`}>
-                <button className="btn btn-secondary">Edit</button>
+              <Link style ={{ margin: 10 }} to={`${url}/cards/${id}/edit`}>
+                <button className="btn btn-secondary"><Pencil /> Edit</button>
               </Link>
-              <button
-                className="btn btn-danger"
-                onClick={() => handleDelete(id)}
-              >
-                Delete
-              </button>
+              <button className="btn btn-danger"
+                onClick={() => handleDelete(id)}><Trash /></button>
             </div>
           </div>
         </div>
