@@ -28,7 +28,6 @@ export default function DeckForm({handleSubmit, formData, handleChange}) {
           onChange={handleChange}
         ></textarea>
       </div>
-
       <Link to={"/"}>
         <button className="btn btn-secondary">Cancel</button>
       </Link>

@@ -24,8 +24,6 @@ export default function CreateDeck() {
       history.push(`/decks/${newDeck.id}`)
   }
 
-
-
   return (
     <div>
       <Breadcrumb isCreating={true}/>
@@ -60,7 +58,6 @@ export default function CreateDeck() {
             onChange={handleChange}
           ></textarea>
         </div>
-
         <Link to={"/"}><button className="btn btn-secondary">Cancel</button></Link>
         <button className="btn btn-primary" type="submit" onSubmit={handleSubmit}>Submit</button>
       </form>

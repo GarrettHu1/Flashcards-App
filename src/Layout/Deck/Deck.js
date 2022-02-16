@@ -11,13 +11,10 @@ export default function Deck({deck}) {
         const result = window.confirm("Are you sure you want to delete this deck?");
         if(result){
           deleteDeck(deckId).then(history.go(0))
-        }
-       
+        }   
     }
-
-
+    
   return (
-    <>
     <div className="card" style={{width: "500px", margin:"10px"}}>
       <div className="card-body" >
         <h5 className="card-title">{deck.name}</h5>
@@ -30,7 +27,5 @@ export default function Deck({deck}) {
         <button style={{ marginLeft: 235 }} type="button" className="btn btn-danger" onClick={() => handleDelete(deck.id)}><Trash /></button>
       </div>
     </div>
-
-    </>
   );
 }
