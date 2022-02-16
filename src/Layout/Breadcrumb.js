@@ -3,10 +3,6 @@ import React from "react";
 
 export default function Breadcrumb({ deck, isEditingDeck, isViewing, isStudying, isCreating, isNewCard, isEditingCard, cardId }) {
   
-
-  // Modular breadcrumb component to reduce repeat instances.
-  
-  
   return (
     <nav aria-label="breadcrumb">
       <ol className="breadcrumb">

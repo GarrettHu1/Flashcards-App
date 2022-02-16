@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createDeck } from "../../utils/api";
 import { Link, useHistory } from "react-router-dom";
-import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import Breadcrumb from "../Breadcrumb"
 
 export default function CreateDeck() {
   const initialFormState = {

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { readDeck } from "../../utils/api";
 import StudyCard from "../Card/StudyCard";
-import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import Breadcrumb from "../Breadcrumb"
 
 export default function StudyDeck(){
     const history = useHistory();
