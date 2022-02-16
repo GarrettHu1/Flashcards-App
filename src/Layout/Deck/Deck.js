@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { deleteDeck } from "../../utils/api";
 import { useHistory } from "react-router-dom";
-
+import { Eye, JournalBookmarkFill, Trash } from 'react-bootstrap-icons';
 
 export default function Deck({deck}) {
   const history = useHistory();
@@ -17,6 +17,7 @@ export default function Deck({deck}) {
 
 
   return (
+    <>
     <div className="card" style={{width: "500px", margin:"10px"}}>
       <div className="card-body" >
         <h5 className="card-title">{deck.name}</h5>
@@ -24,10 +25,12 @@ export default function Deck({deck}) {
         <p className="card-text">
           {deck.description}
         </p>
-        <Link to={`/decks/${deck.id}`}><button type="button" className="btn btn-secondary">View</button></Link>
-        <Link to={`/decks/${deck.id}/study`}><button type="button" className="btn btn-primary">Study</button></Link>
-        <button type="button" className="btn btn-danger" onClick={() => handleDelete(deck.id)}>Delete</button>
+        <Link to={`/decks/${deck.id}`}><button type="button" className="btn btn-secondary"><Eye /> View</button></Link>
+        <Link to={`/decks/${deck.id}/study`}><button style={{ marginLeft: 10, }} type="button" className="btn btn-primary"><JournalBookmarkFill /> Study</button></Link>
+        <button style={{ marginLeft: 235 }} type="button" className="btn btn-danger" onClick={() => handleDelete(deck.id)}><Trash /></button>
       </div>
     </div>
+
+    </>
   );
 }

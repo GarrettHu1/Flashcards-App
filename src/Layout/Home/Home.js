@@ -3,6 +3,7 @@ import DeckList from "../Deck/DeckList"
 import { listDecks } from "../../utils/api";
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
+import { PlusLg } from "react-bootstrap-icons";
 
 
 export default function Home(){
@@ -20,7 +21,7 @@ export default function Home(){
 
     return (
         <div>
-            <Link to={"/decks/new"}><button className="btn btn-secondary" style={{marginLeft:"25px"}}><span className="bi bi-eye"></span>+ Create Deck</button></Link>
+            <Link to={"/decks/new"}><button className="btn btn-secondary" style={{marginLeft:"25px"}}><PlusLg /> Create Deck</button></Link>
             <DeckList decks={decks}/>
         </div>
     )
