@@ -1,3 +1,3 @@
 # Flashcards-App
 
-<h1>Flashcard App</h1>
+Uses react-bootstrap-icons dowloaded with npm install react-bootstrap-icons --save
