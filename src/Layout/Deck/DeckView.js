@@ -35,10 +35,10 @@ export default function DeckView() {
       <Breadcrumb deck={deck} isViewing={true} />
       <h3>{deck.name}</h3>
       <p>{deck.description}</p>
-      <Link style ={{ margin: 10 }} to={`${url}/edit`}><button className="btn btn-secondary"><Pencil /> Edit</button></Link>
-      <Link style ={{ margin: 10 }} to={`${url}/study`}><button className="btn btn-primary"><JournalBookmarkFill /> Study</button></Link>
-      <Link style ={{ margin: 10 }} to={`${url}/cards/new`}><button className="btn btn-primary"><PlusLg /> Add Cards</button></Link>
-      <button className="btn btn-danger" onClick={deleteHandler}><Trash /></button>
+      <Link to={`${url}/edit`}><button className="btn btn-secondary"><Pencil /> Edit</button></Link>
+      <Link style ={{ marginLeft: 10 }} to={`${url}/study`}><button className="btn btn-primary"><JournalBookmarkFill /> Study</button></Link>
+      <Link style ={{ marginLeft: 10 }} to={`${url}/cards/new`}><button className="btn btn-primary"><PlusLg /> Add Cards</button></Link>
+      <button style ={{ marginLeft: 10 }} className="btn btn-danger" onClick={deleteHandler}><Trash /></button>
       <div id={"card-view"}>
         <h2>Cards</h2>
         <ul>
