@@ -1,5 +1,5 @@
 import React from "react";
-import DeckList from "../../deck/DeckList"
+import DeckList from "../Deck/DeckList"
 import { listDecks } from "../../utils/api";
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
@@ -20,7 +20,7 @@ export default function Home(){
 
     return (
         <div>
-            <Link to={"/decks/new"}><button className="btn btn-primary" style={{marginLeft:"25px"}}>+ Create Deck</button></Link>
+            <Link to={"/decks/new"}><button className="btn btn-secondary" style={{marginLeft:"25px"}}><span className="bi bi-eye"></span>+ Create Deck</button></Link>
             <DeckList decks={decks}/>
         </div>
     )

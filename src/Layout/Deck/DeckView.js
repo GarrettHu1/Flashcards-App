@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useRouteMatch, useHistory } from "react-router-dom";
-import Breadcrumb from "../breadcrumb/Breadcrumb";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { deleteDeck, readDeck } from "../../utils/api";
-import CardList from "../card/CardList";
+import CardList from "../Card/CardList";
 
 export default function DeckView() {
   const history = useHistory();

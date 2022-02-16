@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Breadcrumb from "../breadcrumb/Breadcrumb"
+import Breadcrumb from "../Breadcrumb/Breadcrumb"
 import { useParams, useHistory } from "react-router-dom";
 import { readCard, readDeck, updateCard } from "../../utils/api";
 import CardForm from "./CardForm";

@@ -18,39 +18,30 @@ function Layout() {
 
       <div className="container">
         <Switch>
-
           <Route exact path="/">
             <Home/>
           </Route>
-
           <Route exact path="/decks/new">
             <CreateDeck/>
           </Route>
-
           <Route exact path="/decks/:deckId">
             <DeckView/>
           </Route>
-
           <Route exact path="/decks/:deckId/edit">
             <EditDeck/>
           </Route>
-
           <Route exact path="/decks/:deckId/study">
             <StudyDeck/>
           </Route>
-
           <Route exact path="/decks/:deckId/cards/new">
             <NewCard/>
           </Route>
-
           <Route exact path="/decks/:deckId/cards/:cardId/edit">
             <EditCard/>
           </Route>
-
           <Route>
             <NotFound />
           </Route>
-
         </Switch>
       </div>
     </>
