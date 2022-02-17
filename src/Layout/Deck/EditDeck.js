@@ -23,8 +23,13 @@ export default function EditDeck() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateDeck(deck);
-    history.push(`/decks/${deck.id}`);
+    if (deck.name ==="" || deck.description ===""){
+      window.confirm('Please enter all fields')
+    }
+    else {
+    const newDeck = await updateDeck(deck);
+    history.push(`/decks/${deck.id}`)
+  }
   };
 
   useEffect(() => {

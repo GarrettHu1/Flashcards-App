@@ -29,8 +29,8 @@ export default function EditCard() {
 
     const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateCard(card);
-    history.push(`/decks/${deck.id}`);
+    if (card.front ==="" || card.back ===""){window.confirm('Please enter all fields')}
+    else {await updateCard(card);history.push(`/decks/${deck.id}`);}
   };
 
   const handleChange = ({ target }) => {
