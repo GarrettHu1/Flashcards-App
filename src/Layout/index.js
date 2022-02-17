@@ -10,12 +10,12 @@ import DeckView from "./Deck/DeckView";
 import EditDeck from "./Deck/EditDeck";
 import NewCard from "./Card/NewCard";
 import EditCard from "./Card/EditCard";
+import Breadcrumb from "./Home/Breadcrumb"
 
 function Layout() {
   return (
     <>
       <Header />
-
       <div className="container">
         <Switch>
           <Route exact path="/">

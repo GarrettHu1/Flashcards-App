@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Breadcrumb from "../Breadcrumb"
+import Breadcrumb from "../Home/Breadcrumb"
 import { useHistory, useParams } from "react-router-dom";
 import { createCard, readDeck } from "../../utils/api";
 import CardForm from "./CardForm";
+
 export default function NewCard() {
   const history = useHistory();
   const [deck, setDeck] = useState([]);
@@ -20,18 +21,19 @@ export default function NewCard() {
     return () => ac.abort();
   }, [deckId]);
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (card.front ==="" || card.back ===""){window.confirm('Please enter all fields')}
+    else {await createCard(deckId, card);history.push(`/decks/${deck.id}`);}
+  };
+  //displays warning if submitted with empty fields
+  
   const handleChange = ({ target }) => {
     setCard({
         ...card,
       [target.name]: target.value,
       deckId,
     });
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    await createCard(deckId, card);
-    history.push(`/decks/${deck.id}`);
   };
   
   return (

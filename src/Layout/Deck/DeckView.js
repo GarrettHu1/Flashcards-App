@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useRouteMatch, useHistory } from "react-router-dom";
-import Breadcrumb from "../Breadcrumb";
+import Breadcrumb from "../Home/Breadcrumb";
 import { deleteDeck, readDeck } from "../../utils/api";
 import CardList from "../Card/CardList";
 import { Pencil, JournalBookmarkFill, PlusLg, Trash } from "react-bootstrap-icons";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Breadcrumb from "../Breadcrumb"
+import Breadcrumb from "../Home/Breadcrumb"
 import { useParams, useHistory } from "react-router-dom";
 import { readCard, readDeck, updateCard } from "../../utils/api";
 import CardForm from "./CardForm";
@@ -27,6 +27,12 @@ export default function EditCard() {
     return () => ac.abort();
   }, [deckId, cardId]);
 
+    const handleSubmit = async (event) => {
+    event.preventDefault();
+    await updateCard(card);
+    history.push(`/decks/${deck.id}`);
+  };
+
   const handleChange = ({ target }) => {
     setCard({
       ...card,
@@ -34,14 +40,8 @@ export default function EditCard() {
     });
   };
 
-  // handles the submit of the cardform and redirects to the deckId deck page.
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    await updateCard(card);
-    history.push(`/decks/${deck.id}`);
-  };
+
   
-  // HTML return that displays the breadcrumb and card form component.
   return (
     <div>
       <Breadcrumb isEditingCard={true} deck={deck} cardId={cardId} />

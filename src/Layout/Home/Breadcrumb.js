@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import { HouseFill } from "react-bootstrap-icons"
 
 export default function Breadcrumb({ deck, isEditingDeck, isViewing, isStudying, isCreating, isNewCard, isEditingCard, cardId }) {
   
   return (
     <nav aria-label="breadcrumb">
       <ol className="breadcrumb">
-        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+        <li className="breadcrumb-item"><Link to="/"><HouseFill /> Home</Link></li>
         {isViewing && 
           (
             <>

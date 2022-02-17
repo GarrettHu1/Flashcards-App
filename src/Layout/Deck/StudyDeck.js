@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { readDeck } from "../../utils/api";
 import StudyCard from "../Card/StudyCard";
-import Breadcrumb from "../Breadcrumb"
+import Breadcrumb from "../Home/Breadcrumb";
 
 export default function StudyDeck(){
     const history = useHistory();
@@ -53,7 +53,7 @@ export default function StudyDeck(){
 
     return(
         <div>
-            <Breadcrumb deck={deck} isStudying={true}/>
+            <Breadcrumb deck={deck} isStudying={true} />
             <h1>{deck.name}: Study</h1>
             <div className="cards">
                 {deckLength > 2 &&(<StudyCard isFlipped={isFlipped} flipHandler={flipHandler} card={card} length={deckLength} currentPos={currentPos} nextCardHandler={nextCardHandler}/>)}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createDeck } from "../../utils/api";
 import { Link, useHistory } from "react-router-dom";
-import Breadcrumb from "../Breadcrumb"
+import Breadcrumb from "../Home/Breadcrumb"
 
 export default function CreateDeck() {
   const initialFormState = {
@@ -20,13 +20,19 @@ export default function CreateDeck() {
 
   const handleSubmit = async (event) => {
       event.preventDefault();
+      if (formData.name ==="" || formData.description ===""){
+        window.confirm('Please enter all fields')
+      }
+      else {
       const newDeck = await createDeck(formData);
       history.push(`/decks/${newDeck.id}`)
+    }
+      //displays warning if submitted with empty fields
   }
 
   return (
     <div>
-      <Breadcrumb isCreating={true}/>
+      <Breadcrumb isCreating={true} />
 
       <h1>Create Deck</h1>
       <form onSubmit={handleSubmit}>
