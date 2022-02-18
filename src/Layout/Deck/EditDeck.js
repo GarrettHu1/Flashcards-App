@@ -23,8 +23,8 @@ export default function EditDeck() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (deck.name ==="" || deck.description ===""){
-      window.confirm('Please enter all fields')
+    if (deck.name.trim() ==="" || deck.description.trim() ===""){
+      window.alert('Please enter all fields')
     }
     else {
     const newDeck = await updateDeck(deck);

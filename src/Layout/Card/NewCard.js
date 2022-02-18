@@ -23,7 +23,7 @@ export default function NewCard() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (card.front ==="" || card.back ===""){window.confirm('Please enter all fields')}
+    if (card.front.trim() ==="" || card.back.trim() ===""){window.alert('Please enter all fields')}
     else {await createCard(deckId, card);history.push(`/decks/${deck.id}`);}
   };
   //displays warning if submitted with empty fields

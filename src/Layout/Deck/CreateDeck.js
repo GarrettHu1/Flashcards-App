@@ -20,8 +20,8 @@ export default function CreateDeck() {
 
   const handleSubmit = async (event) => {
       event.preventDefault();
-      if (formData.name ==="" || formData.description ===""){
-        window.confirm('Please enter all fields')
+      if (formData.name.trim() ==="" || formData.description.trim() ===""){
+        window.alert('Please enter all fields')
       }
       else {
       const newDeck = await createDeck(formData);

@@ -29,7 +29,7 @@ export default function EditCard() {
 
     const handleSubmit = async (event) => {
     event.preventDefault();
-    if (card.front ==="" || card.back ===""){window.confirm('Please enter all fields')}
+    if (card.front.trim() ==="" || card.back.trim() ===""){window.alert('Please enter all fields')}
     else {await updateCard(card);history.push(`/decks/${deck.id}`);}
   };
 
